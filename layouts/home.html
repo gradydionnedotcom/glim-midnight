@@ -57,9 +57,5 @@
     </div>
 
     <!-- JS for typewritter -->
-    <script>
-        const textArray = {{ with .Site.Params.phrases }}{{ . | jsonify | safeJS }}{{ else }}["Welcome"]{{ end }};
-    </script>
-    <script src='/js/script.js'></script>
     <script src="{{ "js/scroll.js" | relURL }}"></script>
 {{ end }}
