@@ -5,4 +5,4 @@ compatibility_date = "2025-06-14"
 directory = "./public"
 
 [build]
-command = "hugo"
+command: hugo"

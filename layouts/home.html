@@ -9,6 +9,7 @@
                         <source src="{{ .Site.Params.backgroundVideo }}" type="video/mp4">
                     {{ else }}
                         <source src="bg.mp4" type="video/mp4">
+                        <img src="clove.gif" type="image/gif">
                     {{ end }}
                 </video>
             {{ end }}
@@ -36,7 +37,7 @@
 
     <!-- JS for typewritter -->
     <script>
-        const textArray = {{ .Site.Params.phrases | jsonify | safeJS }};
+        const textArray = {{ with .Site.Params.phrases }}{{ . | jsonify | safeJS }}{{ else }}["Welcome"]{{ end }};
     </script>
     <script src='/js/script.js'></script>
 {{ end }}
