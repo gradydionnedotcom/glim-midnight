@@ -21,10 +21,18 @@
                 <div class='content'>
                     <div>
                         <div class='contenthead'>
-                            <h3 class='contentheading'>{{ .Site.Params.title }}</h3>
+                            <h3 class='contentheading'>{{ .Site.Params.header }}</h3>
+
+                            <canvas
+                                id="scrollingCanvas"
+                                width="480"
+                                height="50"
+                                data-text="{{ .Site.Params.scrollingText }}"
+                                aria-label="{{ .Site.Params.scrollingText }}"
+                            ></canvas>
                         </div>
-                        <div class='contenttypewritter animatedText'></div>
                         <div class='contentbtn'>
+                            
                             {{ range .Site.Params.links }}
                                 <a href="{{ .url }}" class='btn btn-outline-light' role='button' 
                                     {{ if or (.newTab | default false) }}
@@ -39,6 +47,13 @@
                 </div>
             </div>
         </div>
+        <div class="posters">
+            <img src="{{ "poster1.png" | relURL }}" alt="Poster 1" class="poster">
+            <img src="{{ "poster2.png" | relURL }}" alt="Poster 2" class="poster">
+            <img src="{{ "poster3.png" | relURL }}" alt="Poster 3" class="poster">  
+            <img src="{{ "poster4.png" | relURL }}" alt="Poster 4" class="poster">
+        </div>
+
     </div>
 
     <!-- JS for typewritter -->
@@ -46,4 +61,5 @@
         const textArray = {{ with .Site.Params.phrases }}{{ . | jsonify | safeJS }}{{ else }}["Welcome"]{{ end }};
     </script>
     <script src='/js/script.js'></script>
+    <script src="{{ "js/scroll.js" | relURL }}"></script>
 {{ end }}

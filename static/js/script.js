@@ -5,6 +5,10 @@ let charIndex = 0;
 let isTyping = true;
 
 function typeJs() {
+    if (!typeJsText) {
+        return;
+    }
+
     if (stringIndex < textArray.length) {
         const currentString = textArray[stringIndex];
 

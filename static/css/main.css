@@ -123,19 +123,6 @@
     color: black;
 }
 
-@keyframes scroll {
- 0% { transform: translateX(100%); }
- 100% { transform: translateX(-100%); }
-}
-
-.scrolling-text {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    box-sizing: border-box;
-    animation: scroll 10s linear infinite;
-}
-
 footer {
     align-items: center;
     background-color: transparent;
