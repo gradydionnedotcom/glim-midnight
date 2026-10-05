@@ -45,6 +45,15 @@
                         </div>
                     </div>
                 </div>
+
+            </div>
+            <div class="bio">
+                <p>{{ .Site.Params.bio }}</p>
+            </div>
+        </div>
+        <div class="postersheader">
+            <div>
+                <h3 class="posters-title"style="white";>{{ .Site.Params.posters.header }}</h3>
             </div>
         </div>
         <div class="posters">
@@ -53,7 +62,15 @@
                 <img src="{{ printf "%s.%s" .name $posters.format | relURL }}" alt="{{ .alt }}" class="poster" width="{{ $posters.width }}" height="{{ $posters.height }}">
             {{ end }}
         </div>
-
+        <div class="merchheader">
+            <h3 class="merch-title">{{ .Site.Params.merch.header }}</h3>
+        </div>
+        <div class="merch">
+            {{ $merch := .Site.Params.merch }}
+            {{ range $merch.items }}
+                <img src="{{ printf "%s.%s" .name $merch.format | relURL }}" alt="{{ .alt }}" class="merch-item" width="{{ $merch.width }}" height="{{ $merch.height }}">
+            {{ end }}
+        </div>
     </div>
 
     <!-- JS for typewritter -->
