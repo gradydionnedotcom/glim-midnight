@@ -10,10 +10,10 @@
     <!-- Font -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
     <!-- Link -->
-    {{ if .Site.Params.favicon }}
-        <link rel="icon" type="image/x-icon" href="{{ .Site.Params.favicon | relURL}}">
+    {{ if .Site.Params.clovelogo }}
+        <link rel="icon" type="image/x-icon" href="{{ .Site.Params.clovelogo.png | relURL}}">
     {{ else }}
-        <link rel="icon" type="image/x-icon" href="{{ relURL "favicon.png"}}">
+        <link rel="icon" type="image/x-icon" href="{{ relURL "clovelogo.png"}}">
     {{ end }}
     <link rel="stylesheet" href="{{ "/css/main.css" | relURL }}">
     <title>{{ .Site.Params.title }}</title>    
